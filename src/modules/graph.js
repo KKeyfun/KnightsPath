@@ -17,11 +17,11 @@ function generateGraph(val) {
     }
     board.push(row);
   }
-  addVertices(board, val);
+  addLegalMoves(board, val);
   return board;
 }
 
-function addVertices(board, val) {
+function addLegalMoves(board, val) {
   const legalMoves = [[2, -1], [2, 1], [1, 2], [1, -2], [-1, -2], [-1, 2], [-2, -1], [-2, 1]];
 
   for (let y = 0; y < val; y++) {

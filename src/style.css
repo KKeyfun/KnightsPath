@@ -4,10 +4,25 @@
     box-sizing: border-box;
 }
 
+.title {
+    text-align: center;
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 4rem;
+    margin-bottom: .25em;
+}
+
 .container {
     display: flex;
     justify-content: center;
     align-items: center;
+
+    width: 100%;
+    position: absolute;
+}
+
+.chessBoard {
+    border:1px solid black;
+    position: relative;
 }
 
 .row {
@@ -19,25 +34,52 @@
     flex-direction: column;
     margin-left: 5vmin;
     gap: 3vmin;
+
+    position: relative;
+    right: 0;
 }
 
-.start {
-    border: 2px solid red;
+.knight {
+    position: absolute;
+    left:-6.5rem;
+    top:.5rem;
+    z-index: 1;
+    /* +6 rem per tile movement */
+    /* centering: tile=6x6rem, 6-5rem = 1rem/2 = .5 rem */
+    height: 5rem;
+    width: 5rem;
+
+    /* testing transition */
+    transition-property: left,top;
+    transition-duration: 1.25s;
 }
 
-.end {
-    border: 2px solid blue;
+.start,.startIndex {
+    border: 3px solid red;
+}
+
+.end,.endIndex {
+    border: 3px solid blue;
 }
 
 .tile {
-    height: calc(90vmin/8);
-    width: calc(90vmin/8);
+    /* height: max(calc(90vmin/8));
+    width: calc(90vmin/8); */
+
+    /* height: calc(90vmin/8);
+    width: calc(90vmin/8); */
+    min-width: 6rem;
+    min-height: 6rem;
 }
 
-.row:nth-child(even) div:nth-child(odd) {
+.row:nth-child(even) div:nth-child(even) {
     background-color: black;
 }
 
-.row:nth-child(odd) div:nth-child(even){
+.row:nth-child(odd) div:nth-child(odd){
     background-color: black;
+}
+
+.visited { 
+    border: 5px solid palegreen;
 }
