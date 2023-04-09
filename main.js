@@ -16,7 +16,7 @@
   \*************************************************************/
 /***/ ((module, __webpack_exports__, __webpack_require__) => {
 
-eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export */ __webpack_require__.d(__webpack_exports__, {\n/* harmony export */   \"default\": () => (__WEBPACK_DEFAULT_EXPORT__)\n/* harmony export */ });\n/* harmony import */ var _node_modules_css_loader_dist_runtime_noSourceMaps_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ../node_modules/css-loader/dist/runtime/noSourceMaps.js */ \"./node_modules/css-loader/dist/runtime/noSourceMaps.js\");\n/* harmony import */ var _node_modules_css_loader_dist_runtime_noSourceMaps_js__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(_node_modules_css_loader_dist_runtime_noSourceMaps_js__WEBPACK_IMPORTED_MODULE_0__);\n/* harmony import */ var _node_modules_css_loader_dist_runtime_api_js__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../node_modules/css-loader/dist/runtime/api.js */ \"./node_modules/css-loader/dist/runtime/api.js\");\n/* harmony import */ var _node_modules_css_loader_dist_runtime_api_js__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(_node_modules_css_loader_dist_runtime_api_js__WEBPACK_IMPORTED_MODULE_1__);\n// Imports\n\n\nvar ___CSS_LOADER_EXPORT___ = _node_modules_css_loader_dist_runtime_api_js__WEBPACK_IMPORTED_MODULE_1___default()((_node_modules_css_loader_dist_runtime_noSourceMaps_js__WEBPACK_IMPORTED_MODULE_0___default()));\n// Module\n___CSS_LOADER_EXPORT___.push([module.id, \"*,*::before,*::after{\\n    padding: 0;\\n    margin: 0;\\n    box-sizing: border-box;\\n}\\n\\n.container {\\n    display: flex;\\n    justify-content: center;\\n    align-items: center;\\n}\\n\\n.row {\\n    display: flex;\\n}\\n\\n.indexContainer {\\n    display: flex;\\n    flex-direction: column;\\n    margin-left: 5vmin;\\n    gap: 3vmin;\\n}\\n\\n.start {\\n    border: 2px solid red;\\n}\\n\\n.end {\\n    border: 2px solid blue;\\n}\\n\\n.tile {\\n    height: calc(90vmin/8);\\n    width: calc(90vmin/8);\\n}\\n\\n.row:nth-child(even) div:nth-child(odd) {\\n    background-color: black;\\n}\\n\\n.row:nth-child(odd) div:nth-child(even){\\n    background-color: black;\\n}\", \"\"]);\n// Exports\n/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (___CSS_LOADER_EXPORT___);\n\n\n//# sourceURL=webpack://my-webpack-project/./src/style.css?./node_modules/css-loader/dist/cjs.js");
+eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export */ __webpack_require__.d(__webpack_exports__, {\n/* harmony export */   \"default\": () => (__WEBPACK_DEFAULT_EXPORT__)\n/* harmony export */ });\n/* harmony import */ var _node_modules_css_loader_dist_runtime_noSourceMaps_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ../node_modules/css-loader/dist/runtime/noSourceMaps.js */ \"./node_modules/css-loader/dist/runtime/noSourceMaps.js\");\n/* harmony import */ var _node_modules_css_loader_dist_runtime_noSourceMaps_js__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(_node_modules_css_loader_dist_runtime_noSourceMaps_js__WEBPACK_IMPORTED_MODULE_0__);\n/* harmony import */ var _node_modules_css_loader_dist_runtime_api_js__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../node_modules/css-loader/dist/runtime/api.js */ \"./node_modules/css-loader/dist/runtime/api.js\");\n/* harmony import */ var _node_modules_css_loader_dist_runtime_api_js__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(_node_modules_css_loader_dist_runtime_api_js__WEBPACK_IMPORTED_MODULE_1__);\n// Imports\n\n\nvar ___CSS_LOADER_EXPORT___ = _node_modules_css_loader_dist_runtime_api_js__WEBPACK_IMPORTED_MODULE_1___default()((_node_modules_css_loader_dist_runtime_noSourceMaps_js__WEBPACK_IMPORTED_MODULE_0___default()));\n// Module\n___CSS_LOADER_EXPORT___.push([module.id, \"*,*::before,*::after{\\n    padding: 0;\\n    margin: 0;\\n    box-sizing: border-box;\\n}\\n\\n.title {\\n    text-align: center;\\n    font-family: Arial, Helvetica, sans-serif;\\n    font-size: 4rem;\\n    margin-bottom: .25em;\\n}\\n\\n.container {\\n    display: flex;\\n    justify-content: center;\\n    align-items: center;\\n\\n    width: 100%;\\n    position: absolute;\\n}\\n\\n.chessBoard {\\n    border:1px solid black;\\n    position: relative;\\n}\\n\\n.row {\\n    display: flex;\\n}\\n\\n.indexContainer {\\n    display: flex;\\n    flex-direction: column;\\n    margin-left: 5vmin;\\n    gap: 3vmin;\\n\\n    position: relative;\\n    right: 0;\\n}\\n\\n.knight {\\n    position: absolute;\\n    left:-6.5rem;\\n    top:.5rem;\\n    z-index: 1;\\n    /* +6 rem per tile movement */\\n    /* centering: tile=6x6rem, 6-5rem = 1rem/2 = .5 rem */\\n    height: 5rem;\\n    width: 5rem;\\n\\n    /* testing transition */\\n    transition-property: left,top;\\n    transition-duration: 1.25s;\\n}\\n\\n.start,.startIndex {\\n    border: 3px solid red;\\n}\\n\\n.end,.endIndex {\\n    border: 3px solid blue;\\n}\\n\\n.tile {\\n    /* height: max(calc(90vmin/8));\\n    width: calc(90vmin/8); */\\n\\n    /* height: calc(90vmin/8);\\n    width: calc(90vmin/8); */\\n    min-width: 6rem;\\n    min-height: 6rem;\\n}\\n\\n.row:nth-child(even) div:nth-child(even) {\\n    background-color: black;\\n}\\n\\n.row:nth-child(odd) div:nth-child(odd){\\n    background-color: black;\\n}\\n\\n.visited { \\n    border: 5px solid palegreen;\\n}\", \"\"]);\n// Exports\n/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (___CSS_LOADER_EXPORT___);\n\n\n//# sourceURL=webpack://my-webpack-project/./src/style.css?./node_modules/css-loader/dist/cjs.js");
 
 /***/ }),
 
@@ -116,7 +116,7 @@ eval("\n\n/* istanbul ignore next  */\nfunction styleTagTransform(css, styleElem
   \******************************/
 /***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
-eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export */ __webpack_require__.d(__webpack_exports__, {\n/* harmony export */   \"default\": () => (__WEBPACK_DEFAULT_EXPORT__)\n/* harmony export */ });\n/* harmony import */ var _node__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./node */ \"./src/modules/node.js\");\n\n\nclass Graph {\n  constructor(val) {\n    this.graph = generateGraph(val);\n  }\n}\n\nfunction generateGraph(val) {\n  const board = [];\n  for (let y = 0; y < val; y++) {\n    const row = [];\n    const tiles = document.querySelectorAll(`[data-y=\"${y}\"]`);\n    for (let x = 0; x < val; x++) {\n      const tile = new _node__WEBPACK_IMPORTED_MODULE_0__[\"default\"](x, y, tiles[x]);\n      row.push(tile);\n    }\n    board.push(row);\n  }\n  addVertices(board, val);\n  return board;\n}\n\nfunction addVertices(board, val) {\n  const legalMoves = [[2, -1], [2, 1], [1, 2], [1, -2], [-1, -2], [-1, 2], [-2, -1], [-2, 1]];\n\n  for (let y = 0; y < val; y++) {\n    for (let x = 0; x < val; x++) {\n      legalMoves.forEach((coord) => {\n        const xDelta = x + coord[0];\n        const yDelta = y + coord[1];\n        if (xDelta > -1 && xDelta < 8 && yDelta > -1 && yDelta < 8) {\n          board[x][y].moves.push(board[xDelta][yDelta]);\n        }\n      });\n    }\n  }\n}\n\n/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (Graph);\n\n\n//# sourceURL=webpack://my-webpack-project/./src/modules/graph.js?");
+eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export */ __webpack_require__.d(__webpack_exports__, {\n/* harmony export */   \"default\": () => (__WEBPACK_DEFAULT_EXPORT__)\n/* harmony export */ });\n/* harmony import */ var _node__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./node */ \"./src/modules/node.js\");\n\n\nclass Graph {\n  constructor(val) {\n    this.graph = generateGraph(val);\n  }\n}\n\nfunction generateGraph(val) {\n  const board = [];\n  for (let y = 0; y < val; y++) {\n    const row = [];\n    const tiles = document.querySelectorAll(`[data-y=\"${y}\"]`);\n    for (let x = 0; x < val; x++) {\n      const tile = new _node__WEBPACK_IMPORTED_MODULE_0__[\"default\"](x, y, tiles[x]);\n      row.push(tile);\n    }\n    board.push(row);\n  }\n  addLegalMoves(board, val);\n  return board;\n}\n\nfunction addLegalMoves(board, val) {\n  const legalMoves = [[2, -1], [2, 1], [1, 2], [1, -2], [-1, -2], [-1, 2], [-2, -1], [-2, 1]];\n\n  for (let y = 0; y < val; y++) {\n    for (let x = 0; x < val; x++) {\n      legalMoves.forEach((coord) => {\n        const xDelta = x + coord[0];\n        const yDelta = y + coord[1];\n        if (xDelta > -1 && xDelta < 8 && yDelta > -1 && yDelta < 8) {\n          board[x][y].moves.push(board[xDelta][yDelta]);\n        }\n      });\n    }\n  }\n}\n\n/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (Graph);\n\n\n//# sourceURL=webpack://my-webpack-project/./src/modules/graph.js?");
 
 /***/ }),
 
@@ -136,7 +136,17 @@ eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export */ __webpac
   \***********************/
 /***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
-eval("__webpack_require__.r(__webpack_exports__);\n/* harmony import */ var _modules_graph__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./modules/graph */ \"./src/modules/graph.js\");\n/* harmony import */ var _style_css__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./style.css */ \"./src/style.css\");\n\n\n\nfunction randomize() {\n  console.log('wip');\n}\n\nwindow.onload = () => {\n  document.querySelector('.random').addEventListener('click', randomize);\n  const chessBoard = new _modules_graph__WEBPACK_IMPORTED_MODULE_0__[\"default\"](8);\n  console.log(chessBoard.graph[5][1]);\n};\n\n\n//# sourceURL=webpack://my-webpack-project/./src/script.js?");
+eval("__webpack_require__.r(__webpack_exports__);\n/* harmony import */ var _modules_graph__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./modules/graph */ \"./src/modules/graph.js\");\n/* harmony import */ var _style_css__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./style.css */ \"./src/style.css\");\n/* harmony import */ var _assets_knight_png__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./assets/knight.png */ \"./src/assets/knight.png\");\n\n\n\n\nconst chessBoard = new _modules_graph__WEBPACK_IMPORTED_MODULE_0__[\"default\"](8);\nconsole.log(chessBoard.graph[5][1]);\n\nfunction randomize() {\n  document.querySelector('.start')?.classList.remove('start');\n  document.querySelector('.end')?.classList.remove('end');\n\n  const startCoords = [generateRandom(), generateRandom()];\n  const endCoords = [generateRandom(), generateRandom()];\n\n  moveKnight(startCoords[0], startCoords[1]);\n\n  const startTile = document.querySelector(`[data-x='${startCoords[0]}'][data-y='${startCoords[1]}']`);\n  startTile.classList.add('start');\n\n  //   document.querySelector(`[data-x='${endCoords[0]}'][data-y='${endCoords[1]}']`).classList.add('end');\n  document.querySelector('[data-x=\\'2\\'][data-y=\\'1\\']').classList.add('end'); // debug\n\n  const start = chessBoard.graph[startCoords[0]][startCoords[1]];\n  const end = chessBoard.graph[endCoords[0]][endCoords[1]];\n\n  console.log(chessBoard.graph[0][0].moves);\n  console.log(getShortestPath(chessBoard.graph[0][0], chessBoard.graph[1][2]));\n}\n\nfunction generateRandom() {\n  return Math.floor(Math.random() * 8);\n}\n\nwindow.onload = () => {\n  document.querySelector('.random').addEventListener('click', randomize);\n  document.querySelector('.knight').src = _assets_knight_png__WEBPACK_IMPORTED_MODULE_2__;\n};\n\nfunction moveKnight(x, y) {\n  const knight = document.querySelector('.knight');\n  knight.style.top = `${y * 6 + 0.5}rem`;\n  knight.style.left = `${x * 6 + 0.5}rem`;\n}\n\nfunction getShortestPath(startNode, endNode, path = []) {\n  console.log(startNode, endNode);\n\n  moveKnight(startNode.x, startNode.y);\n  startNode.element.classList.add('visited'); // debug\n\n  const legalMoves = startNode.moves;\n  const paths = []; // testing\n\n  return path.concat(...test);\n}\n\n\n//# sourceURL=webpack://my-webpack-project/./src/script.js?");
+
+/***/ }),
+
+/***/ "./src/assets/knight.png":
+/*!*******************************!*\
+  !*** ./src/assets/knight.png ***!
+  \*******************************/
+/***/ ((module, __unused_webpack_exports, __webpack_require__) => {
+
+eval("module.exports = __webpack_require__.p + \"26c137b018faafa266e6.png\";\n\n//# sourceURL=webpack://my-webpack-project/./src/assets/knight.png?");
 
 /***/ })
 
@@ -191,6 +201,18 @@ eval("__webpack_require__.r(__webpack_exports__);\n/* harmony import */ var _mod
 /******/ 		};
 /******/ 	})();
 /******/ 	
+/******/ 	/* webpack/runtime/global */
+/******/ 	(() => {
+/******/ 		__webpack_require__.g = (function() {
+/******/ 			if (typeof globalThis === 'object') return globalThis;
+/******/ 			try {
+/******/ 				return this || new Function('return this')();
+/******/ 			} catch (e) {
+/******/ 				if (typeof window === 'object') return window;
+/******/ 			}
+/******/ 		})();
+/******/ 	})();
+/******/ 	
 /******/ 	/* webpack/runtime/hasOwnProperty shorthand */
 /******/ 	(() => {
 /******/ 		__webpack_require__.o = (obj, prop) => (Object.prototype.hasOwnProperty.call(obj, prop))
@@ -205,6 +227,26 @@ eval("__webpack_require__.r(__webpack_exports__);\n/* harmony import */ var _mod
 /******/ 			}
 /******/ 			Object.defineProperty(exports, '__esModule', { value: true });
 /******/ 		};
+/******/ 	})();
+/******/ 	
+/******/ 	/* webpack/runtime/publicPath */
+/******/ 	(() => {
+/******/ 		var scriptUrl;
+/******/ 		if (__webpack_require__.g.importScripts) scriptUrl = __webpack_require__.g.location + "";
+/******/ 		var document = __webpack_require__.g.document;
+/******/ 		if (!scriptUrl && document) {
+/******/ 			if (document.currentScript)
+/******/ 				scriptUrl = document.currentScript.src;
+/******/ 			if (!scriptUrl) {
+/******/ 				var scripts = document.getElementsByTagName("script");
+/******/ 				if(scripts.length) scriptUrl = scripts[scripts.length - 1].src
+/******/ 			}
+/******/ 		}
+/******/ 		// When supporting browsers where an automatic publicPath is not supported you must specify an output.publicPath manually via configuration
+/******/ 		// or pass an empty string ("") and set the __webpack_public_path__ variable from your code to use your own logic.
+/******/ 		if (!scriptUrl) throw new Error("Automatic publicPath is not supported in this browser");
+/******/ 		scriptUrl = scriptUrl.replace(/#.*$/, "").replace(/\?.*$/, "").replace(/\/[^\/]+$/, "/");
+/******/ 		__webpack_require__.p = scriptUrl;
 /******/ 	})();
 /******/ 	
 /******/ 	/* webpack/runtime/nonce */
