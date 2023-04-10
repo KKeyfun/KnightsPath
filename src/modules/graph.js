@@ -8,11 +8,11 @@ class Graph {
 
 function generateGraph(val) {
   const board = [];
-  for (let y = 0; y < val; y++) {
+  for (let x = 0; x < val; x++) {
     const row = [];
-    const tiles = document.querySelectorAll(`[data-y="${y}"]`);
-    for (let x = 0; x < val; x++) {
-      const tile = new Node(x, y, tiles[x]);
+    const tiles = document.querySelectorAll(`[data-x="${x}"]`);
+    for (let y = 0; y < val; y++) {
+      const tile = new Node(x, y, tiles[y]);
       row.push(tile);
     }
     board.push(row);

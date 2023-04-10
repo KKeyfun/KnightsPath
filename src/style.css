@@ -2,11 +2,11 @@
     padding: 0;
     margin: 0;
     box-sizing: border-box;
+    font-family: Arial, Helvetica, sans-serif;
 }
 
 .title {
     text-align: center;
-    font-family: Arial, Helvetica, sans-serif;
     font-size: 4rem;
     margin-bottom: .25em;
 }
@@ -31,12 +31,32 @@
 
 .indexContainer {
     display: flex;
-    flex-direction: column;
     margin-left: 5vmin;
     gap: 3vmin;
 
     position: relative;
     right: 0;
+    text-align: center;
+}
+
+.coordContainer {
+    display: flex;
+    flex-direction: column;
+    gap:.5rem;
+}
+
+.coord {
+    min-height: 1.25rem;
+}
+
+.pathHeader {
+    font-weight: 900;
+}
+
+.random {
+    background-color: white;
+    border: 1px solid black;
+    width: 100%;
 }
 
 .knight {
@@ -45,31 +65,37 @@
     top:.5rem;
     z-index: 1;
     /* +6 rem per tile movement */
-    /* centering: tile=6x6rem, 6-5rem = 1rem/2 = .5 rem */
+    /* centering: tile=6x6rem, 6-5rem(Knight is 5x5rem) = 1rem/2 = .5 rem */
     height: 5rem;
     width: 5rem;
 
-    /* testing transition */
     transition-property: left,top;
-    transition-duration: 1.25s;
+    transition-duration: 1s;
+}
+
+.tile {
+    min-width: 6rem;
+    min-height: 6rem;
+
+    font-size: 2.25rem;
+    
+    color: rgb(255, 255, 255);
+    -webkit-text-stroke: 1.5px black;
+    paint-order: stroke;
 }
 
 .start,.startIndex {
     border: 3px solid red;
+    color: red;
 }
 
 .end,.endIndex {
-    border: 3px solid blue;
+    border: 3px solid rgb(23, 197, 0);
+    color: rgb(23, 197, 0);
 }
 
-.tile {
-    /* height: max(calc(90vmin/8));
-    width: calc(90vmin/8); */
-
-    /* height: calc(90vmin/8);
-    width: calc(90vmin/8); */
-    min-width: 6rem;
-    min-height: 6rem;
+.start,.end {
+    font-size: 1.5rem;
 }
 
 .row:nth-child(even) div:nth-child(even) {
@@ -78,8 +104,4 @@
 
 .row:nth-child(odd) div:nth-child(odd){
     background-color: black;
-}
-
-.visited { 
-    border: 5px solid palegreen;
 }

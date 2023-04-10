@@ -14,3 +14,4 @@ A project that maps out the shortest path for a knight in chess to arrive at a s
 - Webpack
 
 ## Sources
+Knight Icon by Iconmonstr: https://iconmonstr.com/

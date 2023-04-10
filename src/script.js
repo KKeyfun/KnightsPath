@@ -1,30 +1,41 @@
 import Graph from './modules/graph';
 import './style.css';
 import knightIcon from './assets/knight.png';
+import { clearboard, displayPath } from './modules/display';
 
 const chessBoard = new Graph(8);
-console.log(chessBoard.graph[5][1]);
+let running = false;
+async function randomize() {
+  if (running) {
+    return;
+  }
 
-function randomize() {
-  document.querySelector('.start')?.classList.remove('start');
-  document.querySelector('.end')?.classList.remove('end');
+  running = true;
+
+  clearboard();
 
   const startCoords = [generateRandom(), generateRandom()];
-  const endCoords = [generateRandom(), generateRandom()];
+  let endCoords = [generateRandom(), generateRandom()];
 
-  moveKnight(startCoords[0], startCoords[1]);
-
-  const startTile = document.querySelector(`[data-x='${startCoords[0]}'][data-y='${startCoords[1]}']`);
-  startTile.classList.add('start');
-
-  //   document.querySelector(`[data-x='${endCoords[0]}'][data-y='${endCoords[1]}']`).classList.add('end');
-  document.querySelector('[data-x=\'2\'][data-y=\'1\']').classList.add('end'); // debug
+  while (startCoords[0] === endCoords[0] && startCoords[1] === endCoords[1]) {
+    endCoords = [generateRandom(), generateRandom()];
+  }
 
   const start = chessBoard.graph[startCoords[0]][startCoords[1]];
   const end = chessBoard.graph[endCoords[0]][endCoords[1]];
 
-  console.log(chessBoard.graph[0][0].moves);
-  console.log(getShortestPath(chessBoard.graph[0][0], chessBoard.graph[1][2]));
+  const startTile = start.element;
+  startTile.classList.add('start');
+
+  document.querySelector(`[data-x='${endCoords[0]}'][data-y='${endCoords[1]}']`).classList.add('end');
+
+  document.querySelector('.startCoord').textContent = startCoords;
+  document.querySelector('.endCoord').textContent = endCoords;
+
+  console.log(`Starting at: [${startCoords}] Destination: [${endCoords}]`);
+  //   console.log(getShortestPath(start, end));
+  await displayPath(getShortestPath(start, end), chessBoard);
+  running = false;
 }
 
 function generateRandom() {
@@ -36,20 +47,34 @@ window.onload = () => {
   document.querySelector('.knight').src = knightIcon;
 };
 
-function moveKnight(x, y) {
-  const knight = document.querySelector('.knight');
-  knight.style.top = `${y * 6 + 0.5}rem`;
-  knight.style.left = `${x * 6 + 0.5}rem`;
+function getPaths(startNode) {
+  const map = [...new Array(8)].map((e) => new Array(8)); // Empty 8x8 2D array to store links
+  const visited = [];
+  const queue = [startNode];
+
+  while (queue.length > 0) {
+    const nextNode = queue.shift(); // remove first item from queue
+    visited.push(nextNode);
+
+    const legalMoves = nextNode.moves;
+    legalMoves.forEach((node) => { // breadth traversal
+      if (!queue.includes(node) && !visited.includes(node)) {
+        map[node.x][node.y] = nextNode; // link tiles
+        queue.push(node);
+      }
+    });
+  }
+  return map;
 }
 
-function getShortestPath(startNode, endNode, path = []) {
-  console.log(startNode, endNode);
+function getShortestPath(startNode, endNode) {
+  const shortestPath = [endNode];
+  let currentNode = endNode; // Start from the goal
+  const paths = getPaths(startNode); // Do a breadth traversal and store the array
 
-  moveKnight(startNode.x, startNode.y);
-  startNode.element.classList.add('visited'); // debug
-
-  const legalMoves = startNode.moves;
-  const paths = []; // testing
-
-  return path.concat(...test);
+  while (currentNode !== startNode) { // Since we traverse from goal, loop until start reached
+    currentNode = paths[currentNode.x][currentNode.y]; // move backwards through chain to beginning
+    shortestPath.push(currentNode);
+    if (currentNode === startNode) { return shortestPath; }
+  }
 }
