@@ -5,6 +5,43 @@ import { clearboard, displayPath } from './modules/display';
 
 const chessBoard = new Graph(8);
 let running = false;
+
+function generateRandom() {
+  return Math.floor(Math.random() * 8);
+}
+
+function getPaths(startNode) {
+  const map = [...new Array(8)].map(() => new Array(8)); // Empty 8x8 2D array to store links
+  const visited = [];
+  const queue = [startNode];
+
+  while (queue.length > 0) {
+    const nextNode = queue.shift(); // remove first item from queue
+    visited.push(nextNode);
+
+    const legalMoves = nextNode.moves;
+    legalMoves.forEach((node) => { // breadth traversal
+      if (!queue.includes(node) && !visited.includes(node)) {
+        map[node.x][node.y] = nextNode; // link tiles
+        queue.push(node);
+      }
+    });
+  }
+  return map;
+}
+
+function getShortestPath(startNode, endNode) {
+  const shortestPath = [endNode];
+  let currentNode = endNode; // Start from the goal
+  const paths = getPaths(startNode); // Do a breadth traversal and store the array
+
+  while (currentNode !== startNode) { // Since we traverse from goal, loop until start reached
+    currentNode = paths[currentNode.x][currentNode.y]; // move backwards through chain to beginning
+    shortestPath.push(currentNode);
+    if (currentNode === startNode) { return shortestPath; }
+  }
+}
+
 async function randomize() {
   if (running) {
     return;
@@ -38,43 +75,7 @@ async function randomize() {
   running = false;
 }
 
-function generateRandom() {
-  return Math.floor(Math.random() * 8);
-}
-
 window.onload = () => {
   document.querySelector('.random').addEventListener('click', randomize);
   document.querySelector('.knight').src = knightIcon;
 };
-
-function getPaths(startNode) {
-  const map = [...new Array(8)].map((e) => new Array(8)); // Empty 8x8 2D array to store links
-  const visited = [];
-  const queue = [startNode];
-
-  while (queue.length > 0) {
-    const nextNode = queue.shift(); // remove first item from queue
-    visited.push(nextNode);
-
-    const legalMoves = nextNode.moves;
-    legalMoves.forEach((node) => { // breadth traversal
-      if (!queue.includes(node) && !visited.includes(node)) {
-        map[node.x][node.y] = nextNode; // link tiles
-        queue.push(node);
-      }
-    });
-  }
-  return map;
-}
-
-function getShortestPath(startNode, endNode) {
-  const shortestPath = [endNode];
-  let currentNode = endNode; // Start from the goal
-  const paths = getPaths(startNode); // Do a breadth traversal and store the array
-
-  while (currentNode !== startNode) { // Since we traverse from goal, loop until start reached
-    currentNode = paths[currentNode.x][currentNode.y]; // move backwards through chain to beginning
-    shortestPath.push(currentNode);
-    if (currentNode === startNode) { return shortestPath; }
-  }
-}

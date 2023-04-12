@@ -28,7 +28,8 @@ async function moveKnight(path, chessBoard, delay = 0) {
     move.textContent = path[i];
     pathContainer.append(move);
   }
-  chessBoard.graph[path[path.length - 1][0]][path[path.length - 1][1]].element.textContent = 'Goal';
+  const goalCoords = path[path.length - 1];
+  chessBoard.graph[goalCoords[0]][goalCoords[1]].element.textContent = 'Goal';
 }
 
 async function displayPath(arr, chessBoard) {
@@ -45,7 +46,7 @@ function clearboard() {
   document.querySelector('.start')?.classList.remove('start');
   document.querySelector('.end')?.classList.remove('end');
   document.querySelector('.visited')?.classList.remove('visited');
-  document.querySelectorAll('.tile').forEach((tile) => tile.textContent = '');
+  document.querySelectorAll('.tile').forEach((tile) => { tile.textContent = ''; });
 }
 
 export {
